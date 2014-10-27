@@ -1,0 +1,23 @@
+{
+  "name": "heroku-people",
+  "version": "0.0.0",
+  "description": "Manages people from heroku account",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "heroku",
+    "people",
+    "management",
+    "cli",
+    "tool"
+  ],
+  "dependencies": {
+    "util": "*",
+    "lodash": "*",
+    "async": "*"
+  },
+  "author": "Felipe Sabino",
+  "license": "MIT"
+}
