@@ -17,15 +17,15 @@ if (args && args.length > 1) {
 if (args && args.length > 0) {
   person = args[0];
 } else {
-  console.log("You need to provide an email to be removed from all apps or an app regex match. ex: $ node remove-people.js bob@gmail.com app-.*");
+  console.log("You need to provide an email to be added to all apps or an app regex match. ex: $ node remove-people.js bob@gmail.com app-.*");
   process.exit(1);
 }
 
 listapps(function(apps) {
   var apps_filtered = _.filter(apps, function(app) { return app_match.test(app); });
   async.each(apps_filtered, function(app, callback){
-    people.remove(app, person, function(removed) {
-      console.log("person was " + (removed? "" : "not ") + "removed from app: " + app);
+    people.add(app, person, function(added) {
+      console.log("person was " + (added? "" : "not ") + "added to app: " + app);
       callback();
     });
   }, function(err) {
