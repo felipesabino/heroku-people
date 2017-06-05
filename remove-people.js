@@ -25,11 +25,10 @@ listapps(function(apps) {
   var apps_filtered = _.filter(apps, function(app) { return app_match.test(app); });
   async.each(apps_filtered, function(app, callback){
     people.remove(app, person, function(removed) {
-      console.log("person was " + (removed? "" : "not ") + "removed from app: " + app);
+      console.log("executed removal from app: " + app);
       callback();
     });
   }, function(err) {
     console.log("");
   });
 })
-// listColaborators('jpu', function(people) {console.log(people); } )
